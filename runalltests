@@ -1,8 +1,0 @@
-phpunit test/ApplicationHelperTest.php
-phpunit test/ControllerTest.php
-phpunit test/listing12.01Test.php
-phpunit test/listing12.02Test.php
-phpunit test/listing12.03Test.php
-phpunit test/listing12.05Test.php
-phpunit test/listing12.06Test.php
-phpunit test/listing12.07Test.php

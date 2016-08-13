@@ -1,9 +1,0 @@
-You can set up the sqlite db for the transaction script examples by running
-
-php transaction-script-setup.php
-
-There are some PHPUnit tests for some of the core examples -- those that present low level core classes. These should not be batch run (because there are clashing singletons of the same name in different source files -- not something you'd see in a real project). So run them individually:
-
-phpunit test/listing12.01Test.php
-
-There's also a little shell script: runalltests
