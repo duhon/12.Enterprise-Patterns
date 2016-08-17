@@ -1,33 +1,23 @@
 <?php
 namespace Registry;
 
-class Registry
+abstract class Registry
 {
-    private static $instance;
-    private $values = [];
+    private static $instance = [];
 
-    private function __construct()
+    protected function __construct()
     {
     }
 
     static function instance()
     {
-        if (!isset(self::$instance)) {
-            self::$instance = new self();
+        if (!isset(self::$instance[static::class])) {
+            self::$instance[static::class] = new static();
         }
-        return self::$instance;
+        return self::$instance[static::class];
     }
 
-    function get($key)
-    {
-        if (isset($this->values[$key])) {
-            return $this->values[$key];
-        }
-        return null;
-    }
+    abstract protected function get($key);
 
-    function set($key, $value)
-    {
-        $this->values[$key] = $value;
-    }
+    abstract protected function set($key, $value);
 }
